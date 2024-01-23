@@ -11,20 +11,17 @@ desc orders;
 insert into salesman values (1000, 'John', 'Bangalore', '25%');
 insert into salesman values (2000, 'Ravi', 'Bangalore', '20%');
 insert into salesman values (3000, 'Kumar', 'Mysore', '15%');
-insert into salesman values (4000, 'Smith', 'Delhi', '30%');
-insert into salesman values (5000, 'Harsha', 'Hyderabad', '15%');
+
 select * from salesman;
 insert into customer values (10, 'Preethi', 'Bangalore', 100, 1000);
 insert into customer values (11, 'Vivek', 'Mangalore', 300, 1000);
 insert into customer values (12, 'Bhaskar', 'Chennai', 400, 2000);
-insert into customer values (13, 'Chethan', 'Bangalore', 200, 2000);
-insert into customer values (14, 'Mamatha', 'Bangalore', 400, 3000);
+
 select * from customer;
 insert into orders value (50, 5000, '2017-05-04', 10, 1000);
 insert into orders value (51, 450, '2017-01-20', 10, 2000);
 insert into orders value (52, 1000, '2017-02-24', 13, 2000);
-insert into orders value (53, 3500, '2017-04-13', 14, 3000);
-insert into orders value (54, 550, '2017-03-09', 12, 2000);
+
 select * from orders;
 SELECT GRADE, COUNT(DISTINCT CUSTOMER_ID) FROM CUSTOMER GROUP BY GRADE HAVING GRADE>(SELECT AVG(GRADE) FROM CUSTOMER WHERE CITY='Bangalore');
 SELECT SALESMAN_ID, NAME FROM SALESMAN A WHERE 1 < (SELECT COUNT(*) FROM CUSTOMER WHERE SALESMAN_ID=A.SALESMAN_ID);
@@ -97,58 +94,47 @@ PRIMARY KEY (BOOK_ID, BRANCH_ID, CARD_NO));
 insert into publisher values('Jaico',7455679345,'Hydrabad');
 insert into publisher values('Livre',8970862340,'Chennai');
 insert into publisher values('Mcgraw Hill',9989076565,'Bangalore');
-insert into publisher values('Pearson',9889076565,'New Delhi');
-insert into publisher values('Planeta',7756120238,'Bangalore');
+
 
 select * from publisher;
 
 insert into book values(1,'DBMS','2017-01-18','Mcgraw Hill');
 insert into book values(2,'ADBMS','2016-06-16','Mcgraw Hill');
 insert into book values(3,'CN','2016-09-26','Pearson');
-insert into book values(4,'CG','2015-05-18','Planeta');
-insert into book values(5,'OS','2016-05-09','Pearson');
 
 select * from book;
 
 insert into book_authors values('Navathe',1);
 insert into book_authors values('Navathe',2);
 insert into book_authors values('Tanenbaum',3);
-insert into book_authors values('Edward Angel',4);
-insert into book_authors values('Galvin',5);
+
 
 select * from book_authors;
 
 insert into library_branch values(10,'Branch1','Bangalore');
 insert into library_branch values(11,'Branch2','Bangalore');
 insert into library_branch values(12,'Branch3','Bangalore');
-insert into library_branch values(13,'Branch4','Bangalore');
-insert into library_branch values(14,'Branch5','Mysore');
+
 
 select * from library_branch;
 
 insert into book_copies values(10,1,10);
 insert into book_copies values(5,1,11);
 insert into book_copies values(2,2,12);
-insert into book_copies values(5,2,13);
-insert into book_copies values(7,3,14);
-insert into book_copies values(3,4,11);
-insert into book_copies values(1,5,10);
+
 
 select * from book_copies;
 
 insert into card values(100);
 insert into card values(101);
 insert into card values(102);
-insert into card values(103);
-insert into card values(104);
+
 
 select * from card;
 
 insert into book_lending values('2017-01-21','2017-06-21',1,10,101);
 insert into book_lending values('2017-04-12','2017-10-12',1,11,104);
 insert into book_lending values('2017-02-26','2017-07-26',2,13,101);
-insert into book_lending values('2017-02-19','2017-07-19',3,14,101);
-insert into book_lending values('2017-03-15','2017-09-15',4,11,101);
 
 select * from book_lending;
 
@@ -225,47 +211,24 @@ INSERT INTO flight (flight_no,frm,too,distance,departs,arrives,price) VALUES
             (1,'Bangalore','Mangalore',360,'10:45:00','12:00:00',10000),
             (2,'Bangalore','Delhi',5000,'12:15:00','04:30:00',25000),
             (3,'Bangalore','Mumbai',3500,'02:15:00','05:25:00',30000),
-            (4,'Delhi','Mumbai',4500,'10:15:00','12:05:00',35000),
-            (5,'Delhi','Frankfurt',18000,'07:15:00','05:30:00',90000),
-            (6,'Bangalore','Frankfurt',19500,'10:00:00','07:45:00',95000),
-            (7,'Bangalore','Frankfurt',17000,'12:00:00','06:30:00',99000);
+          
 
 INSERT INTO aircraft (aircraft_id,aircraft_name,cruisingrange) values 
         (123,'Airbus',1000),
         (302,'Boeing',5000),
         (306,'Jet01',5000),
-        (378,'Airbus380',8000),
-        (456,'Aircraft',500),
-        (789,'Aircraft02',800),
-        (951,'Aircraft03',1000);
+       
 
 INSERT INTO employees (eid,ename,salary) VALUES
         (1,'Ajay',30000),
         (2,'Ajith',85000),
         (3,'Arnab',50000),
-        (4,'Harry',45000),
-        (5,'Rohit',90000),
-        (6,'James',75000),
-        (7,'Sunil',100000);
+
         
 INSERT INTO certified (eid,aircraft_id) VALUES
         (1,123),
         (2,123),
         (1,302),
-        (5,302),
-        (7,302),
-        (1,306),
-        (2,306),
-        (1,378),
-        (2,378),
-        (4,378),
-        (6,456),
-        (3,456),
-        (5,789),
-        (6,789),
-        (3,951),
-        (1,951),
-        (1,789);
 
 select * from flight;
 select * from aircraft;
@@ -340,8 +303,6 @@ PRIMARY KEY (SSN, PNO));
 INSERT INTO DEPARTMENT VALUES ('D01','Dept1','2015-06-01','EA01'); 
 INSERT INTO DEPARTMENT VALUES ('D02','Dept2','2017-05-02','EA02');
 INSERT INTO DEPARTMENT VALUES ('D03','Dept3','2016-06-01','EA03'); 
-INSERT INTO DEPARTMENT VALUES ('D04','Dept4','2015-08-01','EA04');
-INSERT INTO DEPARTMENT VALUES ('D05','Dept2','2017-05-02','EA05');
 
 INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY,DNO) VALUES
 ('EA01','JOHN','SCOTT','BANGALORE','M', 450000,'D01');
@@ -349,39 +310,20 @@ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY,DNO) VALUES
 ('EA02','JAMES','SMITH','BANGALORE','M', 500000,'D02');
 INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY,DNO) VALUES
 ('EA03','HEARN','BAKER','BANGALORE','M', 700000,'D03');
-INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY,DNO) VALUES
-('EA04','EDWARD','SCOTT','MYSORE','M', 500000,'D04');
-INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY,DNO) VALUES
-('EA05','PAVAN','HEGDE','MANGALORE','M', 650000,'D01');
-INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY,DNO) VALUES
-('EA06','GIRISH','Shetty','MYSORE','M', 450000,'D02');
-INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY,DNO) VALUES
-('EA07','NEHA','SN','BANGALORE','F', 800000,'D02');
-INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY,DNO) VALUES
-('EA08','AMULYA','K','MANGALORE','F', 350000,'D04');
+
 
 INSERT INTO DLOCATION VALUES ('BANGALORE', 'D01');
 INSERT INTO DLOCATION VALUES ('BANGALORE', 'D02');
 INSERT INTO DLOCATION VALUES ('MANGALORE', 'D03');
-INSERT INTO DLOCATION VALUES('Mysore','D04');
+
 
 INSERT INTO PROJECT VALUES (100,'IOT','BANGALORE','D01'); 
 INSERT INTO PROJECT VALUES (101,'CLOUD','BANGALORE','D02'); 
 INSERT INTO PROJECT VALUES (102,'BIGDATA','MANGALORE','D03'); 
-INSERT INTO PROJECT VALUES (103,'SENSORS','MANGALORE','D03');
-INSERT INTO PROJECT VALUES (104,'Machine learning','Mysore','D04'); 
-INSERT INTO PROJECT VALUES (105,'Networks','Mysore','D04');
 
 INSERT INTO WORKS_ON VALUES (4, '100','EA01');
 INSERT INTO WORKS_ON VALUES (6, 101,'EA01');
 INSERT INTO WORKS_ON VALUES (8, 102,'EA02');
-INSERT INTO WORKS_ON VALUES (10,100, 'EA02');
-INSERT INTO WORKS_ON VALUES (3, 100,'EA03');
-INSERT INTO WORKS_ON VALUES (4, 101,'EA04');
-INSERT INTO WORKS_ON VALUES (5, 102,'EA05');
-INSERT INTO WORKS_ON VALUES (6, 103,'EA06');
-INSERT INTO WORKS_ON VALUES (7, 104,'EA07');
-INSERT INTO WORKS_ON VALUES (5, 105,'EA08');
 
 
 select * from Employee where salary > 500000 order by SSN desc;
@@ -445,41 +387,24 @@ FOREIGN KEY (SUBCODE) REFERENCES SUBJECT (SUBCODE),
 INSERT INTO STUDENT VALUES ('1AB13CS020','AKSHAY','BELAGAVI', 8877881122,'M'); 
 INSERT INTO STUDENT VALUES ('1AB13CS022','SANDHYA','BENGALURU', 7722829912,'F'); 
 INSERT INTO STUDENT VALUES ('1AB13CS024','TEESHA','BENGALURU', 7712312312,'F'); 
-INSERT INTO STUDENT VALUES ('1AB13CS026','SUPRIYA','MANGALURU', 8877881122,'F'); 
-INSERT INTO STUDENT VALUES ('1AB14CS040','ABHAY','BENGALURU', 9900211201,'M'); 
-INSERT INTO STUDENT VALUES ('1AB14CS042','BHASKAR','BENGALURU', 9923211099,'M'); 
-INSERT INTO STUDENT VALUES ('1AB14CS044','ASMI','BENGALURU', 7894737377,'F');
-INSERT INTO STUDENT VALUES ('1AB15CS050','AJAY','TUMKUR', 9845091341,'M');
+
 
 
 INSERT INTO SEMSEC VALUES ('CSE8A', 8,'A'); 
 INSERT INTO SEMSEC VALUES ('CSE8B', 8,'B'); 
 INSERT INTO SEMSEC VALUES ('CSE6A', 6, 'A'); 
-INSERT INTO SEMSEC VALUES ('CSE6B' , 6, 'B');
-INSERT INTO SEMSEC VALUES ('CSE4A', 4,'A');
 
 
 
 INSERT INTO CLASS VALUES ('1AB13CS020','CSE8A'); 
 INSERT INTO CLASS VALUES ('1AB13CS022','CSE8A'); 
 INSERT INTO CLASS VALUES ('1AB13CS024','CSE8B'); 
-INSERT INTO CLASS VALUES ('1AB13CS026','CSE8B');
-INSERT INTO CLASS VALUES ('1AB14CS040','CSE6A');
-INSERT INTO CLASS VALUES ('1AB14CS042','CSE6A');
-INSERT INTO CLASS VALUES ('1AB14CS044','CSE6B');
-INSERT INTO CLASS VALUES ('1AB15CS050','CSE4A');
+
 
 
 INSERT INTO SUBJECT VALUES ('10CS81','ACA', 8, 4); 
 INSERT INTO SUBJECT VALUES ('10CS82','SSM', 8, 4);
 INSERT INTO SUBJECT VALUES ('10CS83','NM', 8, 4); 
-INSERT INTO SUBJECT VALUES ('10CS61','OOAD', 6, 4); 
-INSERT INTO SUBJECT VALUES ('10CS62','ECS', 6,4); 
-INSERT INTO SUBJECT VALUES ('10CS63','PTW', 6, 4); 
-INSERT INTO SUBJECT VALUES ('15CS31', 'ME', 4, 4); 
-INSERT INTO SUBJECT VALUES ('15CS32','CN', 4, 4); 
-INSERT INTO SUBJECT VALUES ('15CS33','DBMS', 4, 4);
-
 
 SELECT S.USN, S.SNAME, S.ADDRESS, S.PHONE, S.GENDER
 FROM STUDENT S, CLASS C, SEMSEC SS WHERE S.USN = C.USN
@@ -511,12 +436,7 @@ set new.finalIA = (new.TEST1 + new.test2 + new.test3)/3;
 INSERT INTO IAMARKS VALUES (&#39;1AB13CS020&#39;,&#39;10CS81&#39;,&#39;CSE8A&#39;, 15, 16, 18,0);
 INSERT INTO IAMARKS VALUES (&#39;1AB13CS024&#39;,&#39;10CS81&#39;,&#39;CSE8A&#39;, 09, 08, 10,0);
 INSERT INTO IAMARKS VALUES (&#39;1AB13CS022&#39;,&#39;10CS82&#39;,&#39;CSE8A&#39;, 11, 12, 18,0);
-INSERT INTO IAMARKS VALUES (&#39;1AB13CS022&#39;,&#39;10CS82&#39;,&#39;CSE8B&#39;, 12, 19, 14,0);
-INSERT INTO IAMARKS VALUES (&#39;1AB14CS040&#39;,&#39;10CS61&#39;,&#39;CSE6A&#39;, 19, 15, 20,0);
-INSERT INTO IAMARKS VALUES (&#39;1AB14CS042&#39;,&#39;10CS61&#39;,&#39;CSE6A&#39;, 19, 10, 20,0);
-INSERT INTO IAMARKS VALUES (&#39;1AB14CS042&#39;,&#39;10CS62&#39;,&#39;CSE6B&#39;, 20, 16, 19,0);
-INSERT INTO IAMARKS VALUES (&#39;1AB14CS044&#39;,&#39;10CS62&#39;,&#39;CSE6B&#39;, 10, 11, 19,0);
-select * from IAMarks;
+
 
 
 DELIMITER //
